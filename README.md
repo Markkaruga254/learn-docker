@@ -10,7 +10,7 @@
 ![Time](https://img.shields.io/badge/time-~55%20hours-blue)
 ![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
-[Start here](#-start-here) · [Curriculum](#-curriculum) · [Capstones](#-capstones) · [Cheat sheets](cheatsheets) · [Final exam](assessment/final-exam.md)
+[Public learning site](https://markkaruga254.github.io/learn-docker/) · [Start here](#-start-here) · [Curriculum](#-curriculum) · [Capstones](#-capstones) · [Cheat sheets](cheatsheets) · [Final exam](assessment/final-exam.md)
 
 </div>
 
