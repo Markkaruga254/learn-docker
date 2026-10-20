@@ -63,4 +63,5 @@ jobs:
         run: |
           printf 'POSTGRES_DB=ci_test\nPOSTGRES_USER=ci_test\nPOSTGRES_PASSWORD=ci_test\n' > .env
           docker compose -f docker-compose.prod.yml config -q
+          docker compose -f docker-compose.prod.yml config --format json | python ../../../../scripts/check-tier3-compose.py
           rm -f .env
