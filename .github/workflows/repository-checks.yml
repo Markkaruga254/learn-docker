@@ -1,0 +1,21 @@
+name: Repository checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  shell-syntax:
+    name: Validate shell script syntax
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate learning scripts
+        run: bash -n scripts/doctor.sh scripts/cleanup.sh
