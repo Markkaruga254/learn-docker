@@ -30,6 +30,18 @@ jobs:
       - name: Validate curriculum structure
         run: bash scripts/check-curriculum.sh
 
+      - name: Verify deployment helper rejects unsafe inputs
+        run: |
+          script=modules/10-capstones/tier3-secure-pipeline/reference/deploy.sh
+          if DEPLOY_HOST=deploy@example.com APP_DIR=/opt/app bash "$script" 'bad;touch /tmp/pwn'; then
+            echo "Deployment helper accepted an unsafe image tag." >&2
+            exit 1
+          fi
+          if DEPLOY_HOST=deploy@example.com APP_DIR='/opt/app;id' bash "$script" 'git-abc1234'; then
+            echo "Deployment helper accepted an unsafe application path." >&2
+            exit 1
+          fi
+
       - name: Confirm Docker Compose is available
         run: docker compose version
 
