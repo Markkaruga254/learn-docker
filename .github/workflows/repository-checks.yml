@@ -10,12 +10,15 @@ permissions:
   contents: read
 
 jobs:
-  shell-syntax:
-    name: Validate shell script syntax
+  repository-validation:
+    name: Validate repository content
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Validate learning scripts
-        run: bash -n scripts/doctor.sh scripts/cleanup.sh
+      - name: Validate shell script syntax
+        run: bash -n scripts/doctor.sh scripts/cleanup.sh scripts/check-curriculum.sh
+
+      - name: Validate curriculum structure
+        run: bash scripts/check-curriculum.sh
