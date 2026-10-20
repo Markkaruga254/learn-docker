@@ -37,6 +37,9 @@ ssh "$HOST" "set -eu
   docker compose -f docker-compose.prod.yml pull
   docker compose -f docker-compose.prod.yml up -d --remove-orphans
   docker compose -f docker-compose.prod.yml ps
+  if [ -f .last_deployed_tag ]; then
+    cp .last_deployed_tag .previous_deployed_tag
+  fi
   printf '%s\\n' '$TAG' > .last_deployed_tag"
 
 echo "Deployed $TAG to $HOST"
