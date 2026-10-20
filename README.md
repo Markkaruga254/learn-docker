@@ -27,7 +27,7 @@ basics and a job-ready Docker skillset needs more.
 > Not affiliated with freeCodeCamp or DolfinEd. All labs, exercises and text here are original and follow the
 > video's chapter order. Watch the video for the instructor's walkthroughs.
 
-## 🎯 What you'll be able to do
+## What you'll be able to do
 
 - Explain containers vs VMs and the Docker architecture without notes
 - Run, inspect, debug and clean up containers confidently from the CLI
@@ -38,7 +38,7 @@ basics and a job-ready Docker skillset needs more.
 - Harden images (non-root, minimal, scanned, no secrets) and build them in CI
 - Troubleshoot a broken stack under time pressure
 
-## 🚀 Start here
+##  Start here
 
 1. **Fork and clone** this repo: `git clone https://github.com/Markkaruga254/learn-docker.git`
 2. **Get a Docker host.** AWS EC2 is recommended ([Module 01](modules/01-environment-setup)); Docker Desktop or a local Ubuntu VM also works.
@@ -53,7 +53,7 @@ watch the video chapter → read the module README → type the labs (no copy-pa
 ```
 Predict output *before* you press Enter and write down every surprise. That's where the learning is.
 
-## 🗺️ Curriculum
+##  Curriculum
 
 ```mermaid
 flowchart LR
@@ -79,7 +79,7 @@ flowchart LR
 
 Each module contains: `README.md` (objectives and concepts) · `labs.md` · `assignments.md` · `quiz.md` · `solutions.md`.
 
-## 🏗️ Capstones
+##  Capstones
 
 | Tier | Project | Proves |
 |---|---|---|
@@ -89,24 +89,24 @@ Each module contains: `README.md` (objectives and concepts) · `labs.md` · `ass
 
 Graded with a shared 100-point rubric (pass: 75). Reference solutions exist for Tiers 2 and 3. Try first.
 
-## ✅ Prove it
+## Prove it
 
 - [Final exam](assessment/final-exam.md): written, command-writing, a **broken stack to debug**, and a build task. Pass at 80.
 - [Confidence matrix](CONFIDENCE-MATRIX.md): rate yourself 0 to 3 on 20 skills and link your evidence.
 - Add your capstone links to your fork's README so others can see what you built.
 
-## 📚 Quick references
+##  Quick references
 
 [Docker CLI](cheatsheets/docker-cli.md) · [Dockerfile](cheatsheets/dockerfile.md) · [Compose](cheatsheets/compose.md) · [Networking & storage](cheatsheets/networking-storage.md) · [Troubleshooting](cheatsheets/troubleshooting.md)
 
-## ⚠️ Ground rules
+## Ground rules
 
 - **Cost safety:** set an AWS billing alert first and *stop your instance when you finish*.
 - **Never put secrets in images, Dockerfiles or Git.** Module 09 shows the right way.
 - **Clean up** between modules with `scripts/cleanup.sh`.
 - Labs were written against Docker Engine on Ubuntu 24.04. If something behaves differently for you, please open an issue or a PR.
 
-## 🗂️ Repo layout
+##  Repo layout
 
 ```
 modules/NN-name/   README.md  labs.md  assignments.md  quiz.md  solutions.md  (+ starter/ files)
@@ -117,7 +117,7 @@ CORRECTIONS.md     fixes and caveats vs. the video
 ROADMAP.md         schedule and progress checklist
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Found a typo, an outdated command, or a better lab? Open an issue or PR. Please keep labs runnable on a fresh
 Ubuntu 24.04 host, include expected output where it helps, and never add secrets.
