@@ -18,7 +18,33 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate shell script syntax
-        run: bash -n scripts/doctor.sh scripts/cleanup.sh scripts/check-curriculum.sh
+        run: |
+          for script in \
+            scripts/doctor.sh \
+            scripts/cleanup.sh \
+            scripts/check-curriculum.sh \
+            modules/10-capstones/tier3-secure-pipeline/reference/deploy.sh; do
+            bash -n "$script"
+          done
 
       - name: Validate curriculum structure
         run: bash scripts/check-curriculum.sh
+
+      - name: Confirm Docker Compose is available
+        run: docker compose version
+
+      - name: Validate API, database, and proxy capstone
+        working-directory: modules/10-capstones/tier2-api-db-proxy/reference
+        run: |
+          printf 'POSTGRES_DB=ci_test\nPOSTGRES_USER=ci_test\nPOSTGRES_PASSWORD=ci_test\n' > .env
+          docker compose -f docker-compose.yml config -q
+          rm -f .env
+
+      - name: Validate hardened production Compose configuration
+        working-directory: modules/10-capstones/tier3-secure-pipeline/reference
+        env:
+          IMAGE_TAG: ci-validation
+        run: |
+          printf 'POSTGRES_DB=ci_test\nPOSTGRES_USER=ci_test\nPOSTGRES_PASSWORD=ci_test\n' > .env
+          docker compose -f docker-compose.prod.yml config -q
+          rm -f .env
