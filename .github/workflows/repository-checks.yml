@@ -18,10 +18,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate shell script syntax
-        run: >-
-          bash -n scripts/doctor.sh scripts/cleanup.sh
-          scripts/check-curriculum.sh
-          modules/10-capstones/tier3-secure-pipeline/reference/deploy.sh
+        run: |
+          for script in \
+            scripts/doctor.sh \
+            scripts/cleanup.sh \
+            scripts/check-curriculum.sh \
+            modules/10-capstones/tier3-secure-pipeline/reference/deploy.sh; do
+            bash -n "$script"
+          done
 
       - name: Validate curriculum structure
         run: bash scripts/check-curriculum.sh
