@@ -23,6 +23,7 @@ jobs:
             scripts/doctor.sh \
             scripts/cleanup.sh \
             scripts/check-curriculum.sh \
+            scripts/test-capstone-tier2.sh \
             modules/10-capstones/tier3-secure-pipeline/reference/deploy.sh; do
             bash -n "$script"
           done
@@ -51,6 +52,9 @@ jobs:
           printf 'POSTGRES_DB=ci_test\nPOSTGRES_USER=ci_test\nPOSTGRES_PASSWORD=ci_test\n' > .env
           docker compose -f docker-compose.yml config -q
           rm -f .env
+
+      - name: Exercise Tier 2 capstone end to end
+        run: bash scripts/test-capstone-tier2.sh
 
       - name: Validate hardened production Compose configuration
         working-directory: modules/10-capstones/tier3-secure-pipeline/reference
