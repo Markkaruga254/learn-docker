@@ -40,7 +40,7 @@ basics and a job-ready Docker skillset needs more.
 
 ## 🚀 Start here
 
-1. **Fork and clone** this repo: `git clone https://github.com/YOUR_USERNAME/docker-mastery.git`
+1. **Fork and clone** this repo: `git clone https://github.com/Markkaruga254/learn-docker.git`
 2. **Get a Docker host.** AWS EC2 is recommended ([Module 01](modules/01-environment-setup)); Docker Desktop or a local Ubuntu VM also works.
 3. Run `scripts/doctor.sh` to check your environment.
 4. Open [ROADMAP.md](ROADMAP.md) and start **Module 00**. Tick modules off as you go.
