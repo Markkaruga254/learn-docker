@@ -122,7 +122,10 @@ ROADMAP.md         schedule and progress checklist
 Found a typo, an outdated command, or a better lab? Open an issue or PR. Please keep labs runnable on a fresh
 Ubuntu 24.04 host, include expected output where it helps, and never add secrets.
 
-## 🙏 Credits
+## Licensing
 
-Course video by **DolfinEd** via **freeCodeCamp.org**. Learning material in this repo is original; add your preferred
-license (e.g. MIT for code, CC BY 4.0 for text) in a `LICENSE` file before publishing.
+- **Source code, scripts, and configuration:** [MIT License](LICENSE).
+- **Original educational content** (lessons, labs, assignments, quizzes, solutions, assessments, and diagrams): [CC BY 4.0](LICENSE-CONTENT.md).
+- Third-party materials remain under their own terms. The linked course video is by **DolfinEd** via **freeCodeCamp.org**; this repository is not affiliated with or endorsed by either.
+
+When reusing educational content, credit **Docker Mastery — Mark Karuga**, link to this repository and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), and indicate any changes.
